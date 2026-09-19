@@ -999,3 +999,125 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+
+
+/* =========================================================
+   SIGN UP PASSWORD TOGGLE
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const signupPassword =
+        document.getElementById("signupPassword");
+
+    const confirmPassword =
+        document.getElementById("confirmPassword");
+
+    const toggleSignupPassword =
+        document.getElementById("toggleSignupPassword");
+
+    const toggleConfirmPassword =
+        document.getElementById("toggleConfirmPassword");
+
+
+    if (toggleSignupPassword && signupPassword) {
+
+        toggleSignupPassword.addEventListener(
+            "click",
+            function () {
+
+                if (signupPassword.type === "password") {
+
+                    signupPassword.type = "text";
+
+                    toggleSignupPassword.textContent = "🙈";
+
+                } else {
+
+                    signupPassword.type = "password";
+
+                    toggleSignupPassword.textContent = "👁";
+                }
+            }
+        );
+    }
+
+
+    if (toggleConfirmPassword && confirmPassword) {
+
+        toggleConfirmPassword.addEventListener(
+            "click",
+            function () {
+
+                if (confirmPassword.type === "password") {
+
+                    confirmPassword.type = "text";
+
+                    toggleConfirmPassword.textContent = "🙈";
+
+                } else {
+
+                    confirmPassword.type = "password";
+
+                    toggleConfirmPassword.textContent = "👁";
+                }
+            }
+        );
+    }
+
+
+    /* =====================================================
+       PASSWORD STRENGTH
+       ===================================================== */
+
+    const passwordStrength =
+        document.getElementById("passwordStrength");
+
+
+    if (signupPassword && passwordStrength) {
+
+        signupPassword.addEventListener(
+            "input",
+            function () {
+
+                const password = signupPassword.value;
+
+                passwordStrength.className =
+                    "password-strength";
+
+
+                if (password.length === 0) {
+
+                    passwordStrength.textContent =
+                        "Password strength";
+
+                    return;
+                }
+
+
+                if (password.length < 6) {
+
+                    passwordStrength.textContent =
+                        "Weak password";
+
+                    passwordStrength.classList.add("weak");
+
+                } else if (password.length < 10) {
+
+                    passwordStrength.textContent =
+                        "Medium password";
+
+                    passwordStrength.classList.add("medium");
+
+                } else {
+
+                    passwordStrength.textContent =
+                        "Strong password";
+
+                    passwordStrength.classList.add("strong");
+                }
+            }
+        );
+    }
+
+});
