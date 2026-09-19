@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Reports - NEXORA ERP</title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="../css/responsive.css">
+
+    <link rel="stylesheet"
+        href="../css/components.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- DASHBOARD CONTAINER -->
+
+    <div class="dashboard-container">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+
+            <div class="sidebar-logo">
+
+                <h2>NEXORA</h2>
+
+                <p>Smart Business Management</p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+
+                <a href="dashboard.html">
+                    📊 Dashboard
+                </a>
+
+
+                <a href="employees.html">
+                    👨‍💼 Employees
+                </a>
+
+
+                <a href="customers.html">
+                    👥 Customers
+                </a>
+
+
+                <a href="products.html">
+                    📦 Products
+                </a>
+
+
+                <a href="inventory.html">
+                    🏭 Inventory
+                </a>
+
+
+                <a href="sales.html">
+                    💰 Sales
+                </a>
+
+
+                <a href="invoices.html">
+                    🧾 Invoices
+                </a>
+
+
+                <a href="finance.html">
+                    💵 Finance
+                </a>
+
+
+                <a href="reports.html"
+                    class="active">
+
+                    📈 Reports
+
+                </a>
+
+                <a href="profile.html">
+                    <span>👤</span>
+                    <span>My Profile</span>
+                </a>
+
+
+            </nav>
+
+            <div class="sidebar-logout">
+
+    <a href="login.html" id="logoutButton">
+        <span>🚪</span>
+        <span>Logout</span>
+    </a>
+
+</div>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="dashboard-main">
+
+
+            <!-- TOP NAVBAR -->
+
+            <header class="top-navbar">
+
+
+                <div>
+
+                    <h1>
+                        Reports
+                    </h1>
+
+                    <p>
+                        Analyze your business performance
+                    </p>
+
+                </div>
+
+
+
+                <div class="navbar-right">
+
+
+                    <div class="user-info">
+
+                        <span class="user-name">
+                            Jannatul Fardous Shorna
+                        </span>
+
+                        <span class="user-role">
+                            Admin
+                        </span>
+
+                    </div>
+
+
+
+                    <button id="themeButton">
+
+                        🌙 Dark Mode
+
+                    </button>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- REPORT CONTENT -->
+
+            <section class="dashboard-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <h2>
+                            Business Reports
+                        </h2>
+
+                        <p>
+                            Monitor sales, revenue,
+                            products and business data
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="primary-button"
+                        id="refreshReportsButton">
+
+                        🔄 Refresh Reports
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- SUMMARY CARDS -->
+
+                <div class="dashboard-cards">
+
+
+                    <!-- TOTAL SALES -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            💰
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Total Sales
+                            </h3>
+
+                            <p id="reportTotalSales">
+                                0
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TOTAL REVENUE -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            💵
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Total Revenue
+                            </h3>
+
+                            <p id="reportTotalRevenue">
+                                $0.00
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TOTAL PRODUCTS -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            📦
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Products
+                            </h3>
+
+                            <p id="reportTotalProducts">
+                                0
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TOTAL CUSTOMERS -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            👥
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Customers
+                            </h3>
+
+                            <p id="reportTotalCustomers">
+                                0
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- CHART SECTION -->
+
+                <div class="dashboard-charts">
+
+
+                    <!-- SALES CHART -->
+
+                    <div class="chart-box">
+
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Sales Performance
+                                </h2>
+
+                                <p>
+                                    Monthly sales overview
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <canvas
+                                id="reportSalesChart">
+                            </canvas>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- REVENUE CHART -->
+
+                    <div class="chart-box">
+
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Revenue Performance
+                                </h2>
+
+                                <p>
+                                    Monthly revenue overview
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <canvas
+                                id="reportRevenueChart">
+                            </canvas>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!--SECOND CHART ROW -->
+
+                <div class="dashboard-charts">
+
+
+                    <!-- PRODUCT CHART -->
+
+                    <div class="chart-box">
+
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Product Distribution
+                                </h2>
+
+                                <p>
+                                    Products by category
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <canvas
+                                id="reportProductChart">
+                            </canvas>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- CUSTOMER CHART -->
+
+                    <div class="chart-box">
+
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Customer Status
+                                </h2>
+
+                                <p>
+                                    Active and inactive customers
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <canvas
+                                id="reportCustomerChart">
+                            </canvas>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SALES REPORT TABLE -->
+
+                <div class="dashboard-table-section">
+
+
+                    <div class="section-header">
+
+
+                        <div>
+
+                            <h2>
+                                Sales Report
+                            </h2>
+
+                            <p>
+                                Complete sales transaction report
+                            </p>
+
+                        </div>
+
+
+                        <div class="table-controls">
+
+
+                            <input
+                                type="text"
+                                id="reportSalesSearch"
+                                placeholder="Search sales...">
+
+
+                            <select
+                                id="reportPaymentFilter">
+
+                                <option value="all">
+                                    All Payments
+                                </option>
+
+                                <option value="Cash">
+                                    Cash
+                                </option>
+
+                                <option value="Card">
+                                    Card
+                                </option>
+
+                                <option value="Mobile Banking">
+                                    Mobile Banking
+                                </option>
+
+                            </select>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="table-responsive">
+
+
+                        <table>
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Sale ID
+                                    </th>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Items
+                                    </th>
+
+                                    <th>
+                                        Payment
+                                    </th>
+
+                                    <th>
+                                        Total
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="reportSalesTableBody">
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PRODUCT REPORT -->
+
+                <div class="dashboard-table-section">
+
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Product Report
+                            </h2>
+
+                            <p>
+                                Product stock and inventory overview
+                            </p>
+
+                        </div>
+
+
+                        <select
+                            id="reportProductCategoryFilter">
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="Laptop">
+                                Laptop
+                            </option>
+
+                            <option value="Monitor">
+                                Monitor
+                            </option>
+
+                            <option value="Keyboard">
+                                Keyboard
+                            </option>
+
+                            <option value="Mouse">
+                                Mouse
+                            </option>
+
+                            <option value="Headphone">
+                                Headphone
+                            </option>
+
+                            <option value="Smartphone">
+                                Smartphone
+                            </option>
+
+                            <option value="Printer">
+                                Printer
+                            </option>
+
+                            <option value="Webcam">
+                                Webcam
+                            </option>
+
+                            <option value="SSD">
+                                SSD
+                            </option>
+
+                            <option value="Accessories">
+                                Accessories
+                            </option>
+
+                        </select>
+
+
+                    </div>
+
+
+
+                    <div class="table-responsive">
+
+
+                        <table>
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        ID
+                                    </th>
+
+                                    <th>
+                                        Product
+                                    </th>
+
+                                    <th>
+                                        Category
+                                    </th>
+
+                                    <th>
+                                        Price
+                                    </th>
+
+                                    <th>
+                                        Quantity
+                                    </th>
+
+                                    <th>
+                                        Stock Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="reportProductTableBody">
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- INVENTORY REPORT -->
+
+                <div class="dashboard-table-section">
+
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Inventory Report
+                            </h2>
+
+                            <p>
+                                Current inventory statistics
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="table-responsive">
+
+
+                        <table>
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Product
+                                    </th>
+
+                                    <th>
+                                        Category
+                                    </th>
+
+                                    <th>
+                                        Quantity
+                                    </th>
+
+                                    <th>
+                                        Unit Price
+                                    </th>
+
+                                    <th>
+                                        Stock Value
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="reportInventoryTableBody">
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- EMPLOYEE & CUSTOMER SUMMARY -->
+
+                <div class="dashboard-charts">
+
+
+                    <!-- EMPLOYEE REPORT -->
+
+                    <div class="chart-box">
+
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Employee Report
+                                </h2>
+
+                                <p>
+                                    Employee status overview
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="employeeReportSummary"
+                            class="report-summary-list">
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- CUSTOMER REPORT -->
+
+                    <div class="chart-box">
+
+
+                        <div class="section-header">
+
+                            <div>
+
+                                <h2>
+                                    Customer Report
+                                </h2>
+
+                                <p>
+                                    Customer status overview
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="customerReportSummary"
+                            class="report-summary-list">
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!--FOOTER -->
+
+            <footer>
+
+                <p>
+                    © 2026 NEXORA Technologies.
+                    All Rights Reserved.
+                </p>
+
+            </footer>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- SCRIPTS -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js">
+    </script>
+
+
+    <script src="../js/main.js"></script>
+
+    <script src="../js/reports.js"></script>
+
+
+</body>
+
+</html>

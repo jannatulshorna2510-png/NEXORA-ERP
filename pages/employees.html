@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="NEXORA ERP Employee Management - Manage employees, departments and employee status">
+
+    <title>NEXORA ERP | Employees</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>NEXORA</h2>
+
+                <p>Smart Business Managment</p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+
+                <a href="dashboard.html" class="active">
+                    <span>📊</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a href="employees.html">
+                    <span>👨‍💼</span>
+                    <span>Employees</span>
+                </a>
+
+
+                <a href="customers.html">
+                    <span>👥</span>
+                    <span>Customers</span>
+                </a>
+
+
+                <a href="products.html">
+                    <span>📦</span>
+                    <span>Products</span>
+                </a>
+
+
+                <a href="inventory.html">
+                    <span>🏭</span>
+                    <span>Inventory</span>
+                </a>
+
+
+                <a href="sales.html">
+                    <span>💰</span>
+                    <span>Sales</span>
+                </a>
+
+
+                <a href="invoices.html">
+                    <span>🧾</span>
+                    <span>Invoices</span>
+                </a>
+
+
+                <a href="finance.html">
+                    <span>💳</span>
+                    <span>Finance</span>
+                </a>
+
+
+                <a href="reports.html">
+                    <span>📈</span>
+                    <span>Reports</span>
+                </a>
+
+
+                <a href="profile.html">
+                    <span>👤</span>
+                    <span>My Profile</span>
+                </a>
+
+
+            </nav>
+
+
+            <div class="sidebar-logout">
+
+    <a href="login.html" id="logoutButton">
+        <span>🚪</span>
+        <span>Logout</span>
+    </a>
+
+</div>
+
+        </aside>
+
+
+
+        <!-- MAIN AREA -->
+
+        <main class="dashboard-main">
+
+
+            <!-- TOP NAVBAR -->
+
+            <header class="top-navbar">
+
+                <div class="navbar-page-info">
+
+                    <h1>
+                        Employee Management
+                    </h1>
+
+                    <p>
+                        Manage your company employees
+                    </p>
+
+                </div>
+
+
+                <div class="user-info">
+
+
+                    <!-- Notification -->
+
+                    <div class="notification-wrapper">
+
+                        <button
+                            id="notificationButton"
+                            class="notification-button"
+                            type="button"
+                            aria-label="Notifications">
+
+                            🔔
+
+                            <span
+                                id="notificationCount"
+                                class="notification-count">
+
+                                0
+
+                            </span>
+
+                        </button>
+
+
+                        <div
+                            id="notificationPanel"
+                            class="notification-panel">
+
+                            <div class="notification-panel-header">
+
+                                <h3>
+                                    Notifications
+                                </h3>
+
+                                <button
+                                    id="clearNotificationsButton"
+                                    type="button"
+                                    class="secondary-button">
+
+                                    Clear
+
+                                </button>
+
+                            </div>
+
+
+                            <div id="notificationList">
+
+                                <p class="no-notification">
+                                    No new notifications.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- User -->
+
+                    <div class="user-details">
+
+                        <span class="user-name">
+                            Jannatul Fardous Shorna
+                        </span>
+
+                        <span class="user-role">
+                            Admin
+                        </span>
+
+                    </div>
+
+
+                    <!-- Theme -->
+
+                    <button
+                        id="themeButton"
+                        type="button">
+
+                        🌙 Dark Mode
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- PAGE CONTENT -->
+
+            <section class="dashboard-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="section-header employee-page-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            TEAM MANAGEMENT
+                        </span>
+
+                        <h2>
+                            Employees
+                        </h2>
+
+                        <p>
+                            View and manage your company employees
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="addEmployeeButton"
+                        class="primary-button"
+                        type="button">
+
+                        + Add Employee
+
+                    </button>
+
+                </div>
+
+
+                <!-- SEARCH AND FILTER -->
+
+                <section
+                    class="dashboard-table-section employee-management-section">
+
+
+                    <div class="employee-controls">
+
+
+                        <!-- Search -->
+
+                        <div>
+
+                            <label for="employeeSearch">
+                                Search Employee
+                            </label>
+
+                            <input
+                                type="search"
+                                id="employeeSearch"
+                                placeholder="Search by name, email or ID...">
+
+                        </div>
+
+
+                        <!-- Department -->
+
+                        <div>
+
+                            <label for="departmentFilter">
+                                Department
+                            </label>
+
+                            <select id="departmentFilter">
+
+                                <option value="all">
+                                    All Departments
+                                </option>
+
+                                <option value="IT">
+                                    IT
+                                </option>
+
+                                <option value="Sales">
+                                    Sales
+                                </option>
+
+                                <option value="HR">
+                                    HR
+                                </option>
+
+                                <option value="Finance">
+                                    Finance
+                                </option>
+
+                                <option value="Marketing">
+                                    Marketing
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Status -->
+
+                        <div>
+
+                            <label for="statusFilter">
+                                Status
+                            </label>
+
+                            <select id="statusFilter">
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="Active">
+                                    Active
+                                </option>
+
+                                <option value="Inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EMPLOYEE TABLE -->
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Employee ID</th>
+
+                                    <th>Name</th>
+
+                                    <th>Email</th>
+
+                                    <th>Phone</th>
+
+                                    <th>Department</th>
+
+                                    <th>Position</th>
+
+                                    <th>Salary</th>
+
+                                    <th>Status</th>
+
+                                    <th>Actions</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="employeeTableBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- EMPLOYEE SUMMARY -->
+
+                <section
+                    class="dashboard-cards employee-summary employee-summary-cards">
+
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            ♙
+                        </div>
+
+                        <h3>
+                            Total Employees
+                        </h3>
+
+                        <p id="totalEmployees">
+                            0
+                        </p>
+
+                        <span class="card-positive">
+                            All employees
+                        </span>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            ✓
+                        </div>
+
+                        <h3>
+                            Active Employees
+                        </h3>
+
+                        <p id="activeEmployees">
+                            0
+                        </p>
+
+                        <span class="card-positive">
+                            Currently active
+                        </span>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            —
+                        </div>
+
+                        <h3>
+                            Inactive Employees
+                        </h3>
+
+                        <p id="inactiveEmployees">
+                            0
+                        </p>
+
+                        <span class="card-warning">
+                            Not currently active
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+
+
+            <!-- ADD EMPLOYEE MODAL -->
+
+            <div
+                class="employee-modal"
+                id="employeeModal">
+
+
+                <div class="employee-modal-content">
+
+
+                    <div class="employee-modal-header">
+
+                        <h2 id="employeeModalTitle">
+                            Add New Employee
+                        </h2>
+
+                        <button
+                            type="button"
+                            class="close-modal"
+                            id="closeEmployeeModal">
+
+                            &times;
+
+                        </button>
+
+                    </div>
+
+
+                    <form
+                        id="employeeForm"
+                        class="employee-form">
+
+
+                        <div class="employee-form-group">
+
+                            <label for="employeeName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="employeeName"
+                                placeholder="Enter employee name"
+                                required>
+
+                        </div>
+
+
+                        <div class="employee-form-group">
+
+                            <label for="employeeEmail">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="employeeEmail"
+                                placeholder="Enter email"
+                                required>
+
+                        </div>
+
+
+                        <div class="employee-form-group">
+
+                            <label for="employeePhone">
+                                Phone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="employeePhone"
+                                placeholder="Enter phone number"
+                                required>
+
+                        </div>
+
+
+                        <div class="employee-form-group">
+
+                            <label for="employeeDepartment">
+                                Department
+                            </label>
+
+                            <select
+                                id="employeeDepartment"
+                                required>
+
+                                <option value="">
+                                    Select Department
+                                </option>
+
+                                <option value="IT">
+                                    IT
+                                </option>
+
+                                <option value="Sales">
+                                    Sales
+                                </option>
+
+                                <option value="HR">
+                                    HR
+                                </option>
+
+                                <option value="Finance">
+                                    Finance
+                                </option>
+
+                                <option value="Marketing">
+                                    Marketing
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="employee-form-group">
+
+                            <label for="employeePosition">
+                                Position
+                            </label>
+
+                            <input
+                                type="text"
+                                id="employeePosition"
+                                placeholder="Enter position"
+                                required>
+
+                        </div>
+
+
+                        <div class="employee-form-group">
+
+                            <label for="employeeSalary">
+                                Salary
+                            </label>
+
+                            <input
+                                type="number"
+                                id="employeeSalary"
+                                placeholder="Enter salary"
+                                min="1"
+                                required>
+
+                        </div>
+
+
+                        <div class="employee-form-group">
+
+                            <label for="employeeStatus">
+                                Status
+                            </label>
+
+                            <select
+                                id="employeeStatus"
+                                required>
+
+                                <option value="Active">
+                                    Active
+                                </option>
+
+                                <option value="Inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="employee-modal-actions">
+
+                            <button
+                                type="button"
+                                class="cancel-button"
+                                id="cancelEmployeeButton">
+
+                                Cancel
+
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                class="employee-form-submit"
+                                id="employeeSubmitButton">
+
+                                Add Employee
+
+                            </button>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 NEXORA Technologies.
+                    All Rights Reserved.
+                </p>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/main.js"></script>
+
+    <script src="../js/employees.js"></script>
+
+    <script src="../js/notifications.js"></script>
+
+
+</body>
+
+</html>

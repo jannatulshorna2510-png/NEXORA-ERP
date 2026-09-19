@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="NEXORA ERP Customer Management - Manage customers, profiles and customer status">
+
+    <title>NEXORA ERP | Customers</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+
+            <div class="sidebar-logo">
+
+                <h2>NEXORA</h2>
+
+                <p>Smart Business Management</p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+
+                <a href="dashboard.html" class="active">
+                    <span>📊</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a href="employees.html">
+                    <span>👨‍💼</span>
+                    <span>Employees</span>
+                </a>
+
+
+                <a href="customers.html">
+                    <span>👥</span>
+                    <span>Customers</span>
+                </a>
+
+
+                <a href="products.html">
+                    <span>📦</span>
+                    <span>Products</span>
+                </a>
+
+
+                <a href="inventory.html">
+                    <span>🏭</span>
+                    <span>Inventory</span>
+                </a>
+
+
+                <a href="sales.html">
+                    <span>💰</span>
+                    <span>Sales</span>
+                </a>
+
+
+                <a href="invoices.html">
+                    <span>🧾</span>
+                    <span>Invoices</span>
+                </a>
+
+
+                <a href="finance.html">
+                    <span>💳</span>
+                    <span>Finance</span>
+                </a>
+
+
+                <a href="reports.html">
+                    <span>📈</span>
+                    <span>Reports</span>
+                </a>
+
+
+                <a href="profile.html">
+                    <span>👤</span>
+                    <span>My Profile</span>
+                </a>
+
+
+            </nav>
+
+
+            <!-- Logout -->
+
+            <div class="sidebar-logout">
+
+    <a href="login.html" id="logoutButton">
+        <span>🚪</span>
+        <span>Logout</span>
+    </a>
+
+</div>
+
+
+        </aside>
+
+
+
+        <!--MAIN CONTENT -->
+
+        <main class="dashboard-main">
+
+
+            <!--TOP NAVBAR -->
+
+            <header class="top-navbar">
+
+
+                <div class="navbar-page-info">
+
+                    <h1>
+                        Customer Management
+                    </h1>
+
+                    <p>
+                        Manage your NEXORA customers
+                    </p>
+
+                </div>
+
+
+                <div class="user-info">
+
+
+                    <!-- Notification -->
+
+                    <div class="notification-wrapper">
+
+                        <button
+                            id="notificationButton"
+                            class="notification-button"
+                            type="button"
+                            aria-label="Notifications">
+
+                            🔔
+
+                            <span
+                                id="notificationCount"
+                                class="notification-count">
+
+                                0
+
+                            </span>
+
+                        </button>
+
+
+                        <div
+                            id="notificationPanel"
+                            class="notification-panel">
+
+
+                            <div class="notification-panel-header">
+
+                                <h3>
+                                    Notifications
+                                </h3>
+
+                                <button
+                                    id="clearNotificationsButton"
+                                    type="button"
+                                    class="secondary-button">
+
+                                    Clear
+
+                                </button>
+
+                            </div>
+
+
+                            <div id="notificationList">
+
+                                <p class="no-notification">
+                                    No new notifications.
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- User -->
+
+                    <div class="user-details">
+
+                        <span class="user-name">
+                            Jannatul Fardous Shorna
+                        </span>
+
+                        <span class="user-role">
+                            Admin
+                        </span>
+
+                    </div>
+
+
+                    <!-- Theme -->
+
+                    <button
+                        id="themeButton"
+                        type="button">
+
+                        🌙 Dark Mode
+
+                    </button>
+
+
+                </div>
+
+            </header>
+
+
+
+            <!-- PAGE CONTENT -->
+
+            <section class="dashboard-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="section-header customer-page-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            CUSTOMER MANAGEMENT
+                        </span>
+
+                        <h2>
+                            Customers
+                        </h2>
+
+                        <p>
+                            View and manage all NEXORA customers
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="addCustomerButton"
+                        class="primary-button"
+                        type="button">
+
+                        + Add Customer
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- SEARCH & FILTER -->
+
+                <div class="employee-controls customer-controls">
+
+
+                    <!-- Search -->
+
+                    <div>
+
+                        <label for="customerSearch">
+                            Search Customer
+                        </label>
+
+                        <input
+                            type="search"
+                            id="customerSearch"
+                            placeholder="Search by name, email or ID...">
+
+                    </div>
+
+
+                    <!-- Status -->
+
+                    <div>
+
+                        <label for="customerStatusFilter">
+                            Status
+                        </label>
+
+                        <select id="customerStatusFilter">
+
+                            <option value="all">
+                                All Status
+                            </option>
+
+                            <option value="Active">
+                                Active
+                            </option>
+
+                            <option value="Inactive">
+                                Inactive
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Sort -->
+
+                    <div>
+
+                        <label for="customerSort">
+                            Sort By
+                        </label>
+
+                        <select id="customerSort">
+
+                            <option value="name">
+                                Name
+                            </option>
+
+                            <option value="email">
+                                Email
+                            </option>
+
+                            <option value="status">
+                                Status
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- CUSTOMER TABLE -->
+
+                <section class="dashboard-table-section customer-management-section">
+
+
+                    <div class="section-header customer-list-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                CUSTOMER DIRECTORY
+                            </span>
+
+                            <h2>
+                                Customer List
+                            </h2>
+
+                        </div>
+
+
+                        <span class="customer-count-label">
+
+                            Total Customers:
+
+                            <strong id="customerCount">
+                                0
+                            </strong>
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        ID
+                                    </th>
+
+                                    <th>
+                                        Customer Name
+                                    </th>
+
+                                    <th>
+                                        Email
+                                    </th>
+
+                                    <th>
+                                        Phone
+                                    </th>
+
+                                    <th>
+                                        Company
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="customerTableBody">
+
+                                <!-- JavaScript will insert customers here -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                </section>
+
+
+            </section>
+
+
+            <!-- ADD / EDIT CUSTOMER MODAL -->
+
+            <div
+                class="employee-modal"
+                id="customerModal">
+
+
+                <div class="employee-modal-content">
+
+
+                    <!-- Modal Header -->
+
+                    <div class="employee-modal-header">
+
+                        <h2 id="customerModalTitle">
+                            Add New Customer
+                        </h2>
+
+
+                        <button
+                            type="button"
+                            class="close-modal"
+                            id="closeCustomerModal"
+                            aria-label="Close modal">
+
+                            &times;
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Customer Form -->
+
+                    <form
+                        id="customerForm"
+                        class="employee-form">
+
+
+                        <!-- Customer Name -->
+
+                        <div class="employee-form-group">
+
+                            <label for="customerName">
+                                Customer Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customerName"
+                                placeholder="Enter customer name"
+                                required>
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="employee-form-group">
+
+                            <label for="customerEmail">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="customerEmail"
+                                placeholder="Enter email"
+                                required>
+
+                        </div>
+
+
+                        <!-- Phone -->
+
+                        <div class="employee-form-group">
+
+                            <label for="customerPhone">
+                                Phone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="customerPhone"
+                                placeholder="Enter phone number"
+                                required>
+
+                        </div>
+
+
+                        <!-- Company -->
+
+                        <div class="employee-form-group">
+
+                            <label for="customerCompany">
+                                Company
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customerCompany"
+                                placeholder="Enter company name">
+
+                        </div>
+
+
+                        <!-- Status -->
+
+                        <div class="employee-form-group">
+
+                            <label for="customerStatus">
+                                Status
+                            </label>
+
+                            <select id="customerStatus">
+
+                                <option value="Active">
+                                    Active
+                                </option>
+
+                                <option value="Inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Address -->
+
+                        <div class="employee-form-group">
+
+                            <label for="customerAddress">
+                                Address
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customerAddress"
+                                placeholder="Enter customer address">
+
+                        </div>
+
+
+
+                        <!-- MODAL ACTION BUTTON -->
+
+                        <div class="employee-modal-actions">
+
+
+                            <!-- Cancel -->
+
+                            <button
+                                type="button"
+                                id="cancelCustomerButton"
+                                class="cancel-button">
+
+                                Cancel
+
+                            </button>
+
+
+                            <!-- Add / Save Changes -->
+
+                            <button
+                                type="submit"
+                                id="customerSubmitButton"
+                                class="employee-form-submit">
+
+                                Add Customer
+
+                            </button>
+
+
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CUSTOMER PROFILE MODAL -->
+
+            <div
+                class="employee-modal"
+                id="customerProfileModal">
+
+
+                <div class="employee-modal-content">
+
+
+                    <!-- Profile Modal Header -->
+
+                    <div class="employee-modal-header">
+
+                        <h2>
+                            Customer Profile
+                        </h2>
+
+
+                        <button
+                            type="button"
+                            class="close-modal"
+                            id="closeCustomerProfileModal"
+                            aria-label="Close profile modal">
+
+                            &times;
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Customer Profile -->
+
+                    <div class="customer-profile">
+
+
+                        <!-- Customer ID -->
+
+                        <div class="customer-profile-item">
+
+                            <span>
+                                Customer ID
+                            </span>
+
+                            <strong id="profileCustomerId">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Customer Name -->
+
+                        <div class="customer-profile-item">
+
+                            <span>
+                                Customer Name
+                            </span>
+
+                            <strong id="profileCustomerName">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="customer-profile-item">
+
+                            <span>
+                                Email
+                            </span>
+
+                            <strong id="profileCustomerEmail">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Phone -->
+
+                        <div class="customer-profile-item">
+
+                            <span>
+                                Phone
+                            </span>
+
+                            <strong id="profileCustomerPhone">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Company -->
+
+                        <div class="customer-profile-item">
+
+                            <span>
+                                Company
+                            </span>
+
+                            <strong id="profileCustomerCompany">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Address -->
+
+                        <div class="customer-profile-item">
+
+                            <span>
+                                Address
+                            </span>
+
+                            <strong id="profileCustomerAddress">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Status -->
+
+                        <div class="customer-profile-item">
+
+                            <span>
+                                Status
+                            </span>
+
+                            <strong id="profileCustomerStatus">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+
+                    © 2026 NEXORA Technologies.
+                    All Rights Reserved.
+
+                </p>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/main.js"></script>
+
+    <script src="../js/customer.js"></script>
+
+    <script src="../js/notifications.js"></script>
+
+
+</body>
+
+</html>

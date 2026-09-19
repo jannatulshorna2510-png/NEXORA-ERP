@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="NEXORA ERP User Profile">
+
+    <title>My Profile - NEXORA ERP</title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="../css/responsive.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>NEXORA</h2>
+
+                <p>Smart Business Management</p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <span>📊</span>
+                    Dashboard
+                </a>
+
+                <a href="employees.html" class="nav-item">
+                    <span>👨‍💼</span>
+                    Employees
+                </a>
+
+                <a href="customers.html" class="nav-item">
+                    <span>👥</span>
+                    Customers
+                </a>
+
+                <a href="products.html" class="nav-item">
+                    <span>📦</span>
+                    Products
+                </a>
+
+                <a href="inventory.html" class="nav-item">
+                    <span>🏭</span>
+                    Inventory
+                </a>
+
+                <a href="sales.html" class="nav-item">
+                    <span>💰</span>
+                    Sales
+                </a>
+
+                <a href="invoices.html" class="nav-item">
+                    <span>🧾</span>
+                    Invoices
+                </a>
+
+                <a href="finance.html" class="nav-item">
+                    <span>💳</span>
+                    Finance
+                </a>
+
+                <a href="reports.html" class="nav-item">
+                    <span>📈</span>
+                    Reports
+                </a>
+
+                <a href="profile.html"
+                    class="nav-item active">
+
+                    <span>👤</span>
+                    My Profile
+
+                </a>
+
+                
+
+            </nav>
+
+            <div class="sidebar-logout">
+
+    <a href="login.html" id="logoutButton">
+        <span>🚪</span>
+        <span>Logout</span>
+    </a>
+
+</div>
+            
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="dashboard-main">
+
+
+            <!-- TOP NAVBAR -->
+
+            <header class="top-navbar">
+
+                <div>
+
+                    <h1>
+                        My Profile
+                    </h1>
+
+                    <p>
+                        Manage your account information
+                    </p>
+
+                </div>
+
+
+                <div class="navbar-right">
+
+                    <span class="user-name">
+                        Jannatul Fardous Shorna
+                    </span>
+
+                    <span class="user-role">
+                        Admin
+                    </span>
+
+                    <button
+                        type="button"
+                        id="themeButton">
+
+                        🌙 Dark Mode
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- PROFILE CONTENT -->
+
+            <section class="dashboard-content profile-page">
+
+
+                <!-- PROFILE HERO -->
+
+                <div class="profile-hero">
+
+                    <div class="profile-avatar">
+
+                        <span id="profileAvatar">
+                            J
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-hero-info">
+
+                        <h2 id="profileHeroName">
+                            Jannatul Fardous Shorna
+                        </h2>
+
+                        <p id="profileHeroEmail">
+                            admin@nexora.com
+                        </p>
+
+                        <span
+                            class="profile-role-badge"
+                            id="profileHeroRole">
+
+                            Admin
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-status">
+
+                        <span class="status-dot"></span>
+
+                        <span>
+                            Active
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!--PROFILE GRID -->
+
+                <div class="profile-grid">
+
+
+                    <!-- PERSONAL INFORMATION -->
+
+                    <div class="profile-card">
+
+                        <div class="profile-card-header">
+
+                            <div>
+
+                                <span class="profile-card-icon">
+                                    👤
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Personal Information
+                                    </h3>
+
+                                    <p>
+                                        Your basic account details
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                id="editProfileButton"
+                                class="profile-edit-button">
+
+                                ✎ Edit Profile
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="profile-info-grid">
+
+
+                            <div class="profile-info-item">
+
+                                <span>
+                                    Full Name
+                                </span>
+
+                                <strong id="profileName">
+                                    Jannatul Fardous Shorna
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profile-info-item">
+
+                                <span>
+                                    Email Address
+                                </span>
+
+                                <strong id="profileEmail">
+                                    admin@nexora.com
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profile-info-item">
+
+                                <span>
+                                    Phone Number
+                                </span>
+
+                                <strong id="profilePhone">
+                                    Not provided
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profile-info-item">
+
+                                <span>
+                                    Role
+                                </span>
+
+                                <strong id="profileRole">
+                                    Admin
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ACCOUNT INFORMATION -->
+
+                    <div class="profile-card">
+
+                        <div class="profile-card-header">
+
+                            <div>
+
+                                <span class="profile-card-icon">
+                                    🔐
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Account Information
+                                    </h3>
+
+                                    <p>
+                                        Your NEXORA account status
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-info-list">
+
+
+                            <div class="profile-list-row">
+
+                                <div>
+
+                                    <span class="profile-row-icon">
+                                        🛡️
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Account Status
+                                        </strong>
+
+                                        <small>
+                                            Current account status
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                                <span class="profile-status-badge">
+                                    Active
+                                </span>
+
+                            </div>
+
+
+                            <div class="profile-list-row">
+
+                                <div>
+
+                                    <span class="profile-row-icon">
+                                        👔
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            User Role
+                                        </strong>
+
+                                        <small>
+                                            Access level in NEXORA ERP
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                                <span
+                                    class="profile-role-small"
+                                    id="profileAccountRole">
+
+                                    Admin
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="profile-list-row">
+
+                                <div>
+
+                                    <span class="profile-row-icon">
+                                        🏢
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Company
+                                        </strong>
+
+                                        <small>
+                                            Organization
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                                <span>
+                                    NEXORA Technologies
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EDIT PROFILE FORM -->
+
+                    <div
+                        class="profile-card profile-edit-card"
+                        id="profileEditCard">
+
+                        <div class="profile-card-header">
+
+                            <div>
+
+                                <span class="profile-card-icon">
+                                    ✏️
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Edit Profile
+                                    </h3>
+
+                                    <p>
+                                        Update your personal information
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="profileForm"
+                            class="profile-form">
+
+
+                            <div class="profile-form-grid">
+
+                                <div class="profile-form-group">
+
+                                    <label for="editProfileName">
+                                        Full Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="editProfileName"
+                                        required>
+
+                                </div>
+
+
+                                <div class="profile-form-group">
+
+                                    <label for="editProfileEmail">
+                                        Email Address
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="editProfileEmail"
+                                        required>
+
+                                </div>
+
+
+                                <div class="profile-form-group">
+
+                                    <label for="editProfilePhone">
+                                        Phone Number
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="editProfilePhone"
+                                        placeholder="Enter phone number">
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-form-actions">
+
+                                <button
+                                    type="button"
+                                    id="cancelProfileButton"
+                                    class="cancel-button">
+
+                                    Cancel
+
+                                </button>
+
+                                <button
+                                    type="submit"
+                                    class="profile-save-button">
+
+                                    ✓ Save Changes
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+
+                    <!-- SECURITY CARD -->
+
+                    <div class="profile-card">
+
+                        <div class="profile-card-header">
+
+                            <div>
+
+                                <span class="profile-card-icon">
+                                    🔒
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Security
+                                    </h3>
+
+                                    <p>
+                                        Keep your account secure
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-content">
+
+                            <div class="security-icon">
+                                🔑
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Password
+                                </strong>
+
+                                <p>
+                                    For security, use the Forgot Password
+                                    option to reset your password.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="forgot-password.html"
+                            class="profile-security-button">
+
+                            🔐 Change Password
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer>
+
+                <p>
+                    © 2026 NEXORA Technologies.
+                    All Rights Reserved.
+                </p>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/main.js"></script>
+
+    <script src="../js/profile.js"></script>
+
+
+</body>
+
+</html>

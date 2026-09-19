@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sales Management - NEXORA ERP</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!--  SIDEBAR  -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h2>NEXORA</h2>
+                <p>Smart Business Management</p>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <span>📊</span>
+                    Dashboard
+                </a>
+
+                <a href="employees.html" class="nav-item">
+                    <span>👨‍💼</span>
+                    Employees
+                </a>
+
+                <a href="customers.html" class="nav-item">
+                    <span>👥</span>
+                    Customers
+                </a>
+
+                <a href="products.html" class="nav-item">
+                    <span>📦</span>
+                    Products
+                </a>
+
+                <a href="inventory.html" class="nav-item">
+                    <span>🏭</span>
+                    Inventory
+                </a>
+
+                <a href="sales.html" class="nav-item active">
+                    <span>💰</span>
+                    Sales
+                </a>
+
+                <a href="invoices.html" class="nav-item">
+                    <span>🧾</span>
+                    Invoices
+                </a>
+
+                <a href="finance.html" class="nav-item">
+                    <span>💳</span>
+                    Finance
+                </a>
+
+                <a href="reports.html" class="nav-item">
+                    <span>📈</span>
+                    Reports
+                </a>
+
+                <a href="profile.html">
+                    <span>👤</span>
+                    <span>My Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-logout">
+
+    <a href="login.html" id="logoutButton">
+        <span>🚪</span>
+        <span>Logout</span>
+    </a>
+
+</div>
+
+        </aside>
+
+
+        <!--  MAIN CONTENT  -->
+
+        <main class="dashboard-main">
+
+            <!--  TOP NAVBAR  -->
+
+            <header class="top-navbar">
+
+                <div class="navbar-left">
+                    <h1>Sales Management</h1>
+                </div>
+
+                <div class="navbar-right">
+
+                    <button class="theme-Button" id="themeButton">
+                        🌙 Dark Mode
+                    </button>
+
+                    <div class="user-info">
+
+                        <div class="user-avatar">
+                            A
+                        </div>
+
+                        <div>
+                            <strong id="navbarUserName">Admin</strong>
+                            <small id="navbarUserRole">
+                                Administrator
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!--  PAGE CONTENT  -->
+
+            <section class="dashboard-content">
+
+                <!-- Page Header -->
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Create New Sale</h2>
+
+                        <p>
+                            Select a customer and add products to create a sale.
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <button
+                            class="secondary-button"
+                            id="clearCartButton">
+                            Clear Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!--  SALE INFORMATION  -->
+
+                <div class="table-section">
+
+                    <div class="table-header">
+
+                        <div>
+                            <h3>Sale Information</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="sale-form-grid">
+
+                        <!-- Customer -->
+
+                        <div class="employee-form-group">
+
+                            <label for="saleCustomer">
+                                Customer
+                            </label>
+
+                            <select id="saleCustomer">
+
+                                <option value="">
+                                    Walk-in Customer
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Sale Date -->
+
+                        <div class="employee-form-group">
+
+                            <label for="saleDate">
+                                Sale Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="saleDate"
+                            >
+
+                        </div>
+
+
+                        <!-- Payment Method -->
+
+                        <div class="employee-form-group">
+
+                            <label for="paymentMethod">
+                                Payment Method
+                            </label>
+
+                            <select id="paymentMethod">
+
+                                <option value="Cash">
+                                    Cash
+                                </option>
+
+                                <option value="Card">
+                                    Card
+                                </option>
+
+                                <option value="Mobile Banking">
+                                    Mobile Banking
+                                </option>
+
+                                <option value="Bank Transfer">
+                                    Bank Transfer
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!--  ADD PRODUCT  -->
+
+                <div class="table-section">
+
+                    <div class="table-header">
+
+                        <div>
+
+                            <h3>Add Products</h3>
+
+                            <p>
+                                Select products and add them to the cart.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="sale-product-controls">
+
+                        <!-- Product -->
+
+                        <div class="employee-form-group">
+
+                            <label for="saleProduct">
+                                Product
+                            </label>
+
+                            <select id="saleProduct">
+
+                                <option value="">
+                                    Select a product
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Quantity -->
+
+                        <div class="employee-form-group">
+
+                            <label for="saleQuantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                id="saleQuantity"
+                                min="1"
+                                value="1"
+                            >
+
+                        </div>
+
+
+                        <!-- Add Button -->
+
+                        <div class="sale-add-button-wrapper">
+
+                            <button
+                                class="primary-button"
+                                id="addToCartButton">
+                                + Add to Cart
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!--  CART  -->
+
+                <div class="table-section">
+
+                    <div class="table-header">
+
+                        <div>
+
+                            <h3>Shopping Cart</h3>
+
+                            <p id="cartItemCount">
+                                0 items
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table class="data-table sales-cart-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Product</th>
+
+                                    <th>Price</th>
+
+                                    <th>Quantity</th>
+
+                                    <th>Total</th>
+
+                                    <th>Action</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="salesCartBody">
+
+                                <tr>
+
+                                    <td
+                                        colspan="5"
+                                        class="empty-state">
+                                        Cart is empty.
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!--  SALE SUMMARY  -->
+
+                <div class="sale-summary-section">
+
+                    <div class="sale-summary-card">
+
+                        <h3>Sale Summary</h3>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <strong id="saleSubtotal">
+                                $0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Discount
+                            </span>
+
+                            <div class="summary-input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="saleDiscount"
+                                    min="0"
+                                    value="0"
+                                    placeholder="0"
+                                >
+
+                                <span>%</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                VAT / Tax
+                            </span>
+
+                            <div class="summary-input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="saleVat"
+                                    min="0"
+                                    value="5"
+                                    placeholder="5"
+                                >
+
+                                <span>%</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Discount Amount
+                            </span>
+
+                            <strong id="saleDiscountAmount">
+                                $0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                VAT Amount
+                            </span>
+
+                            <strong id="saleVatAmount">
+                                $0.00
+                            </strong>
+
+                        </div>
+
+
+                        <hr>
+
+
+                        <div class="summary-row grand-total">
+
+                            <span>
+                                Grand Total
+                            </span>
+
+                            <strong id="saleGrandTotal">
+                                $0.00
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button complete-sale-button"
+                            id="completeSaleButton">
+
+                            Complete Sale
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!--  SALES HISTORY  -->
+
+                <div class="table-section">
+
+                    <div class="table-header">
+
+                        <div>
+
+                            <h3>Recent Sales</h3>
+
+                            <p>
+                                Your recent completed sales.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table class="data-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Sale ID</th>
+
+                                    <th>Date</th>
+
+                                    <th>Customer</th>
+
+                                    <th>Items</th>
+
+                                    <th>Total</th>
+
+                                    <th>Payment</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="salesHistoryBody">
+
+                                <tr>
+
+                                    <td
+                                        colspan="6"
+                                        class="empty-state">
+                                        No sales yet.
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!--  JAVASCRIPT  -->
+
+    <script src="../js/main.js"></script>
+    <script src="../js/sales.js"></script>
+
+</body>
+
+</html>

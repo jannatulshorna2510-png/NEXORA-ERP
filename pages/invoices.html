@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="NEXORA ERP Invoice Management">
+
+    <title>Invoices - NEXORA ERP</title>
+
+    <link rel="stylesheet"
+        href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="../css/responsive.css">
+
+</head>
+
+
+<body>
+
+    <!-- DASHBOARD CONTAINER -->
+
+    <div class="dashboard-container">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>NEXORA</h2>
+
+                <p>Smart Business Management</p>
+
+
+            </div>
+
+
+            <!-- SIDEBAR NAVIGATION -->
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html"
+                    class="nav-item">
+
+                    <span>📊</span>
+
+                    Dashboard
+
+                </a>
+
+
+                <a href="employees.html"
+                    class="nav-item">
+
+                    <span>👨‍💼</span>
+
+                    Employees
+
+                </a>
+
+
+                <a href="customers.html"
+                    class="nav-item">
+
+                    <span>👥</span>
+
+                    Customers
+
+                </a>
+
+
+                <a href="products.html"
+                    class="nav-item">
+
+                    <span>📦</span>
+
+                    Products
+
+                </a>
+
+
+                <a href="inventory.html"
+                    class="nav-item">
+
+                    <span>🏭</span>
+
+                    Inventory
+
+                </a>
+
+
+                <a href="sales.html"
+                    class="nav-item">
+
+                    <span>💰</span>
+
+                    Sales
+
+                </a>
+
+
+                <a href="invoices.html"
+                    class="nav-item active">
+
+                    <span>🧾</span>
+
+                    Invoices
+
+                </a>
+
+
+                <a href="finance.html"
+                    class="nav-item">
+
+                    <span>💳</span>
+
+                    Finance
+
+                </a>
+
+
+                <a href="reports.html"
+                    class="nav-item">
+
+                    <span>📈</span>
+
+                    Reports
+
+                </a>
+
+                <a href="profile.html">
+                    <span>👤</span>
+                    <span>My Profile</span>
+                </a>
+
+                
+            </nav>
+
+           <div class="sidebar-logout">
+
+    <a href="login.html" id="logoutButton">
+        <span>🚪</span>
+        <span>Logout</span>
+    </a>
+
+</div>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="dashboard-main">
+
+
+            <!-- TOP NAVBAR -->
+
+            <header class="top-navbar">
+
+                <div>
+
+                    <h1>
+                        Invoice Management
+                    </h1>
+
+                    <p>
+                        Manage and view all invoices
+                    </p>
+
+                </div>
+
+
+                <!-- NAVBAR RIGHT -->
+
+                <div class="navbar-right">
+
+
+                    <!-- User Name -->
+
+                    <span class="user-name">
+                        Jannatul Fardous Shorna
+                    </span>
+
+
+                    <!-- User Role -->
+
+                    <span class="user-role">
+                        Admin
+                    </span>
+
+
+                    <!-- Theme Button -->
+
+                    <button
+                        type="button"
+                        id="themeButton">
+
+                        🌙 Dark Mode
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- PAGE CONTENT -->
+
+            <section class="dashboard-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h2>
+                            Invoices
+                        </h2>
+
+                        <p>
+                            View, search and print invoices
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!--SUMMARY CARDS -->
+
+                <div class="dashboard-cards">
+
+
+                    <!-- TOTAL INVOICES -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            🧾
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Total Invoices
+                            </h3>
+
+                            <p id="totalInvoices">
+                                0
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TOTAL INVOICE AMOUNT -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            💰
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Total Invoice Amount
+                            </h3>
+
+                            <p id="totalInvoiceAmount">
+                                ৳0.00
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TODAY'S INVOICES -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            📅
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Today's Invoices
+                            </h3>
+
+                            <p id="todayInvoices">
+                                0
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- AVERAGE INVOICE -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">
+                            📊
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Average Invoice
+                            </h3>
+
+                            <p id="averageInvoice">
+                                ৳0.00
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!--INVOICE TABLE SECTION -->
+
+                <div class="dashboard-table-section">
+
+
+                    <!-- SECTION HEADER -->
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Invoice List
+                            </h2>
+
+                            <p>
+
+                                Total:
+
+                                <strong id="invoiceCount">
+                                    0
+                                </strong>
+
+                                invoices
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SEARCH & FILTER -->
+
+                    <div class="table-controls">
+
+
+                        <!-- Search -->
+
+                        <div class="search-box">
+
+                            <input
+                                type="text"
+                                id="invoiceSearch"
+                                placeholder="Search invoice, customer or sale ID...">
+
+                        </div>
+
+
+
+                        <!-- Payment Filter -->
+
+                        <div class="filter-box">
+
+                            <select id="invoicePaymentFilter">
+
+                                <option value="all">
+                                    All Payment Methods
+                                </option>
+
+                                <option value="Cash">
+                                    Cash
+                                </option>
+
+                                <option value="Card">
+                                    Card
+                                </option>
+
+                                <option value="Bank">
+                                    Bank
+                                </option>
+
+                                <option value="Mobile Banking">
+                                    Mobile Banking
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- INVOICE TABLE -->
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Invoice ID
+                                    </th>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Sale ID
+                                    </th>
+
+                                    <th>
+                                        Payment
+                                    </th>
+
+                                    <th>
+                                        Subtotal
+                                    </th>
+
+                                    <th>
+                                        Grand Total
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="invoiceTableBody">
+
+                                <tr>
+
+                                    <td colspan="8"
+                                        style="text-align:center; padding:30px;">
+
+                                        No invoices found.
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer>
+
+                <p>
+                    © 2026 NEXORA Technologies.
+                    All Rights Reserved.
+                </p>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- INVOICE VIEW MODAL -->
+
+    <div id="invoiceModal"
+        class="employee-modal"
+        style="display: none;">
+
+
+        <div class="employee-modal-content">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="employee-modal-header">
+
+                <div>
+
+                    <h2>
+                        Invoice Details
+                    </h2>
+
+                    <p>
+                        NEXORA Technologies
+                    </p>
+
+                </div>
+
+
+                <!-- Close X Button -->
+
+                <button
+                    type="button"
+                    id="closeInvoiceButton"
+                    class="close-modal">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+
+
+            <!-- INVOICE PRINT AREA -->
+
+            <div id="invoicePrintArea"
+                class="invoice-print-area">
+
+
+                <!-- COMPANY INFORMATION -->
+
+                <div class="invoice-company">
+
+                    <h1>
+                        NEXORA Technologies
+                    </h1>
+
+                    <p>
+                        Technology & Electronics
+                    </p>
+
+                    <p>
+                        Smart Business Management System
+                    </p>
+
+                </div>
+
+
+
+                <!-- INVOICE INFORMATION -->
+
+                <div class="invoice-info-grid">
+
+
+                    <!-- INVOICE INFORMATION -->
+
+                    <div>
+
+                        <h3>
+                            Invoice
+                        </h3>
+
+
+                        <p>
+
+                            <strong>
+                                Invoice ID:
+                            </strong>
+
+                            <span id="invoiceViewId">
+                                -
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Sale ID:
+                            </strong>
+
+                            <span id="invoiceViewSaleId">
+                                -
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Date:
+                            </strong>
+
+                            <span id="invoiceViewDate">
+                                -
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Payment:
+                            </strong>
+
+                            <span id="invoiceViewPayment">
+                                -
+                            </span>
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- CUSTOMER INFORMATION -->
+
+                    <div>
+
+                        <h3>
+                            Bill To
+                        </h3>
+
+
+                        <p>
+
+                            <strong>
+                                Name:
+                            </strong>
+
+                            <span id="invoiceViewCustomer">
+                                -
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Email:
+                            </strong>
+
+                            <span id="invoiceViewCustomerEmail">
+                                -
+                            </span>
+
+                        </p>
+
+
+                        <p>
+
+                            <strong>
+                                Phone:
+                            </strong>
+
+                            <span id="invoiceViewCustomerPhone">
+                                -
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INVOICE ITEMS -->
+
+                <div class="table-container">
+
+                    <table class="invoice-items-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    #
+                                </th>
+
+                                <th>
+                                    Product
+                                </th>
+
+                                <th>
+                                    Quantity
+                                </th>
+
+                                <th>
+                                    Unit Price
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="invoiceItemsBody">
+
+                            <tr>
+
+                                <td colspan="5"
+                                    style="text-align:center;">
+
+                                    No items found.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- INVOICE TOTALS -->
+
+                <div class="invoice-totals">
+
+
+                    <!-- Subtotal -->
+
+                    <div class="invoice-total-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="invoiceViewSubtotal">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- Discount -->
+
+                    <div class="invoice-total-row">
+
+                        <span>
+                            Discount
+                        </span>
+
+                        <strong id="invoiceViewDiscount">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- VAT -->
+
+                    <div class="invoice-total-row">
+
+                        <span>
+                            VAT
+                        </span>
+
+                        <strong id="invoiceViewVat">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- Grand Total -->
+
+                    <div class="invoice-total-row grand-total">
+
+                        <span>
+                            Grand Total
+                        </span>
+
+                        <strong id="invoiceViewGrandTotal">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INVOICE NOTE -->
+
+                <div class="invoice-note">
+
+                    <p>
+                        Thank you for doing business with
+                        NEXORA Technologies.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- MODAL ACTION BUTTONS -->
+
+            <div class="modal-actions">
+
+
+                <!-- Print -->
+
+                <button
+                    type="button"
+                    id="printInvoiceButton"
+                    class="btn btn-primary">
+
+                    🖨️ Print Invoice
+
+                </button>
+
+
+
+                <!-- Close -->
+
+                <button
+                    type="button"
+                    id="closeInvoiceBottomButton"
+                    class="btn btn-secondary">
+
+                    Close
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/main.js"></script>
+
+    <script src="../js/invoice.js"></script>
+
+
+</body>
+
+</html>

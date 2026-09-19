@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="NEXORA ERP Product Management">
+
+    <title>Products - NEXORA ERP</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="dashboard-container">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+
+            <div class="sidebar-logo">
+
+                <h2>NEXORA</h2>
+
+                <p>Smart Business Management</p>
+
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+    <a href="dashboard.html" class="nav-item">
+        <span>📊</span>
+        Dashboard
+    </a>
+
+    <a href="employees.html" class="nav-item">
+        <span>👨‍💼</span>
+        Employees
+    </a>
+
+    <a href="customers.html" class="nav-item">
+        <span>👥</span>
+        Customers
+    </a>
+
+    <a href="products.html" class="nav-item active">
+        <span>📦</span>
+        Products
+    </a>
+
+    <a href="inventory.html" class="nav-item">
+        <span>🏭</span>
+        Inventory
+    </a>
+
+    <a href="sales.html" class="nav-item">
+        <span>💰</span>
+        Sales
+    </a>
+
+    <a href="invoices.html" class="nav-item">
+        <span>🧾</span>
+        Invoices
+    </a>
+
+    <a href="finance.html" class="nav-item">
+        <span>💳</span>
+        Finance
+    </a>
+
+    <a href="reports.html" class="nav-item">
+        <span>📈</span>
+        Reports
+    </a>
+
+    
+
+    <a href="profile.html">
+        <span>👤</span>
+        My Profile
+    </a>
+
+</nav>
+
+
+    <!-- Logout -->
+
+    <div class="sidebar-logout">
+
+    <a href="login.html" id="logoutButton">
+        <span>🚪</span>
+        Logout
+    </a>
+
+</div>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="dashboard-main">
+
+
+            <!-- TOP NAVBAR -->
+
+            <header class="top-navbar">
+
+
+                <div class="navbar-page-info">
+
+                    <h1>
+                        Products
+                    </h1>
+
+                    <p>
+                        Manage your products and stock
+                    </p>
+
+                </div>
+
+
+                <div class="user-info">
+
+
+                    <!-- User -->
+
+                    <div class="user-details">
+
+                        <span
+                            id="welcomeUser"
+                            class="user-name">
+
+                            Welcome, Admin
+
+                        </span>
+
+
+                        <span class="user-role">
+
+                            Admin
+
+                        </span>
+
+                    </div>
+
+
+                    <!-- Theme -->
+
+                    <button
+                        id="themeButton"
+                        class="theme-button"
+                        type="button">
+
+                        🌙 Dark Mode
+
+                    </button>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- PAGE CONTENT -->
+
+            <section class="dashboard-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="section-header">
+
+
+                    <div>
+
+                        <span class="section-label">
+                            PRODUCT MANAGEMENT
+                        </span>
+
+
+                        <h2>
+                            Product Management
+                        </h2>
+
+
+                        <p>
+                            Add, edit, view and manage your products.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="addProductButton"
+                        class="primary-button"
+                        type="button">
+
+                        + Add Product
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- SEARCH & FILTER -->
+
+                <div class="employee-controls">
+
+
+                    <!-- Search -->
+
+                    <div>
+
+                        <label for="productSearch">
+                            Search Product
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="productSearch"
+                            placeholder="Search product...">
+
+                    </div>
+
+
+
+                    <!-- Category -->
+
+                    <div>
+
+                        <label for="productCategoryFilter">
+                            Category
+                        </label>
+
+
+                        <select id="productCategoryFilter">
+
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+
+                            <option value="Laptop">
+                                Laptop
+                            </option>
+
+
+                            <option value="Monitor">
+                                Monitor
+                            </option>
+
+
+                            <option value="Keyboard">
+                                Keyboard
+                            </option>
+
+
+                            <option value="Mouse">
+                                Mouse
+                            </option>
+
+
+                            <option value="Headphone">
+                                Headphone
+                            </option>
+
+
+                            <option value="Smartphone">
+                                Smartphone
+                            </option>
+
+
+                            <option value="Printer">
+                                Printer
+                            </option>
+
+
+                            <option value="Webcam">
+                                Webcam
+                            </option>
+
+
+                            <option value="SSD">
+                                SSD
+                            </option>
+
+
+                            <option value="Accessories">
+                                Accessories
+                            </option>
+
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- Stock -->
+
+                    <div>
+
+                        <label for="productStockFilter">
+                            Stock Status
+                        </label>
+
+
+                        <select id="productStockFilter">
+
+
+                            <option value="all">
+                                All Stock
+                            </option>
+
+
+                            <option value="In Stock">
+                                In Stock
+                            </option>
+
+
+                            <option value="Low Stock">
+                                Low Stock
+                            </option>
+
+
+                            <option value="Out of Stock">
+                                Out of Stock
+                            </option>
+
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PRODUCT SUMMARY -->
+
+                <div class="employee-summary">
+
+
+                    <h2>
+                        Products
+                    </h2>
+
+
+                    <p>
+
+                        Total Products:
+
+                        <strong id="productCount">
+                            0
+                        </strong>
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- PRODUCT TABLE -->
+
+                <div class="table-container">
+
+
+                    <table class="data-table">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ID
+                                </th>
+
+
+                                <th>
+                                    Product
+                                </th>
+
+
+                                <th>
+                                    Category
+                                </th>
+
+
+                                <th>
+                                    Price
+                                </th>
+
+
+                                <th>
+                                    Quantity
+                                </th>
+
+
+                                <th>
+                                    Stock Status
+                                </th>
+
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+
+                        <tbody id="productTableBody">
+
+                            <!-- JavaScript will render products here -->
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+
+                    © 2026 NEXORA Technologies.
+                    All Rights Reserved.
+
+                </p>
+
+            </footer>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- ADD / EDIT PRODUCT MODAL -->
+
+    <div
+        id="productModal"
+        class="employee-modal"
+        style="display: none;">
+
+
+        <div class="employee-modal-content">
+
+
+            <!-- Modal Header -->
+
+            <div class="employee-modal-header">
+
+
+                <h2 id="productModalTitle">
+                    Add Product
+                </h2>
+
+
+                <button
+                    type="button"
+                    id="closeProductModal"
+                    class="close-modal"
+                    aria-label="Close modal">
+
+                    &times;
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Product Form -->
+
+            <form
+                id="productForm"
+                class="employee-form">
+
+
+                <!-- Product Name -->
+
+                <div class="employee-form-group">
+
+
+                    <label for="productName">
+                        Product Name
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="productName"
+                        required
+                        placeholder="Enter product name">
+
+
+                </div>
+
+
+
+                <!-- Category -->
+
+                <div class="employee-form-group">
+
+
+                    <label for="productCategory">
+                        Category
+                    </label>
+
+
+                    <select
+                        id="productCategory"
+                        required>
+
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+
+                        <option value="Laptop">
+                            Laptop
+                        </option>
+
+
+                        <option value="Monitor">
+                            Monitor
+                        </option>
+
+
+                        <option value="Keyboard">
+                            Keyboard
+                        </option>
+
+
+                        <option value="Mouse">
+                            Mouse
+                        </option>
+
+
+                        <option value="Headphone">
+                            Headphone
+                        </option>
+
+
+                        <option value="Smartphone">
+                            Smartphone
+                        </option>
+
+
+                        <option value="Printer">
+                            Printer
+                        </option>
+
+
+                        <option value="Webcam">
+                            Webcam
+                        </option>
+
+
+                        <option value="SSD">
+                            SSD
+                        </option>
+
+
+                        <option value="Accessories">
+                            Accessories
+                        </option>
+
+
+                    </select>
+
+
+                </div>
+
+
+
+                <!-- Price -->
+
+                <div class="employee-form-group">
+
+
+                    <label for="productPrice">
+                        Price ($)
+                    </label>
+
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        min="0"
+                        step="0.01"
+                        required
+                        placeholder="Enter price">
+
+
+                </div>
+
+
+
+                <!-- Quantity -->
+
+                <div class="employee-form-group">
+
+
+                    <label for="productQuantity">
+                        Quantity
+                    </label>
+
+
+                    <input
+                        type="number"
+                        id="productQuantity"
+                        min="0"
+                        required
+                        placeholder="Enter quantity">
+
+
+                </div>
+
+
+
+                <!-- Image -->
+
+                <div class="employee-form-group">
+
+
+                    <label for="productImage">
+                        Image URL
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="productImage"
+                        placeholder="Enter image URL">
+
+
+                </div>
+
+
+
+                <!-- Description -->
+
+                <div class="employee-form-group">
+
+
+                    <label for="productDescription">
+                        Description
+                    </label>
+
+
+                    <textarea
+                        id="productDescription"
+                        rows="4"
+                        placeholder="Enter product description"></textarea>
+
+
+                </div>
+
+
+
+                <!-- Modal Buttons -->
+
+                <div class="employee-modal-actions">
+
+
+                    <button
+                        type="button"
+                        id="cancelProductButton"
+                        class="cancel-button">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        id="productSubmitButton"
+                        class="employee-form-submit">
+
+                        Save Product
+
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!--PRODUCT PROFILE / VIEW MODAL -->
+
+    <div
+        id="productProfileModal"
+        class="employee-modal"
+        style="display: none;">
+
+
+        <div class="employee-modal-content">
+
+
+            <!-- Profile Header -->
+
+            <div class="employee-modal-header">
+
+
+                <h2>
+                    Product Profile
+                </h2>
+
+
+                <button
+                    type="button"
+                    id="closeProductProfileModal"
+                    class="close-modal"
+                    aria-label="Close profile modal">
+
+                    &times;
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Product Profile -->
+
+            <div class="product-profile">
+
+
+                <!-- Product ID -->
+
+                <div class="customer-profile-item">
+
+
+                    <span>
+                        Product ID
+                    </span>
+
+
+                    <strong id="profileProductId">
+                        -
+                    </strong>
+
+
+                </div>
+
+
+
+                <!-- Product Name -->
+
+                <div class="customer-profile-item">
+
+
+                    <span>
+                        Product Name
+                    </span>
+
+
+                    <strong id="profileProductName">
+                        -
+                    </strong>
+
+
+                </div>
+
+
+
+                <!-- Category -->
+
+                <div class="customer-profile-item">
+
+
+                    <span>
+                        Category
+                    </span>
+
+
+                    <strong id="profileProductCategory">
+                        -
+                    </strong>
+
+
+                </div>
+
+
+
+                <!-- Price -->
+
+                <div class="customer-profile-item">
+
+
+                    <span>
+                        Price
+                    </span>
+
+
+                    <strong>
+
+                        $
+
+                        <span id="profileProductPrice">
+                            0
+                        </span>
+
+                    </strong>
+
+
+                </div>
+
+
+
+                <!-- Quantity -->
+
+                <div class="customer-profile-item">
+
+
+                    <span>
+                        Quantity
+                    </span>
+
+
+                    <strong id="profileProductQuantity">
+                        0
+                    </strong>
+
+
+                </div>
+
+
+
+                <!-- Stock -->
+
+                <div class="customer-profile-item">
+
+
+                    <span>
+                        Stock Status
+                    </span>
+
+
+                    <strong id="profileProductStock">
+                        -
+                    </strong>
+
+
+                </div>
+
+
+
+                <!-- Description -->
+
+                <div class="customer-profile-item profile-description">
+
+
+                    <span>
+                        Description
+                    </span>
+
+
+                    <strong id="profileProductDescription">
+                        No description available.
+                    </strong>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Profile Close -->
+
+            <div class="employee-modal-actions">
+
+
+                <button
+                    type="button"
+                    id="profileCloseButton"
+                    class="cancel-button">
+
+                    Close
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/main.js"></script>
+
+    <script src="../js/product.js"></script>
+
+
+</body>
+
+</html>
